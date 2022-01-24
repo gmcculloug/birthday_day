@@ -4,10 +4,10 @@ Sample app written in Ruby and Go that displays:
 * Year, Age, Day of the week.
 
 # Usage 
-birthday_day.<ext> <birth_date> <number_of_years>
+birthday_day <birth_date> <number_of_years>
 
 where:
-* birth_date - Date of birth (Format: **YYYY-MM-DD**)
+* birth_date - (Format: **YYYY-MM-DD**)
 * number_of_years - How many years to process from current year (Default: **10**)
 
 ### Example Go output:
