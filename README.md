@@ -3,16 +3,15 @@
 Sample app written in Ruby and Go that displays:
 * Year, Age, Day of the week.
 
-# Usage 
-birthday_day <birth_date> <number_of_years>
-
-where:
-* birth_date - (Format: **YYYY-MM-DD**)
-* number_of_years - How many years to process from current year (Default: **10**)
+# Usage
+  -count int
+    	Number of dates to print (default 10)
+  -date string
+    	Birthday date
 
 ### Example Go output:
 ```
-go run birthday_day.go 2000-01-01 5
+go run birthday_day.go -date 2000-01-01 -count 5
 GoLang
 Date      	Age	Day
 ----------	---	----------

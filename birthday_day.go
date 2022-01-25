@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"strconv"
@@ -11,21 +12,24 @@ const layout string = "2006-01-02"
 
 func main() {
 	today := time.Now()
-	count := 10
+	date_str := flag.String("date", "", "Birthday date")
+	count := flag.Int("count", 10, "Number of dates to print")
 
-	birth_date, err := time.Parse(layout, os.Args[1])
+	flag.Parse()
+	if flag.NFlag() == 0 {
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	birth_date, err := time.Parse(layout, *date_str)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 		os.Exit(1)
 	}
 
-	if len(os.Args) > 2 {
-		count, err = strconv.Atoi(os.Args[2])
-	}
-
 	print_header()
 	print_date(birth_date.Year(), birth_date)
-	for i := 0; i < count; i++ {
+	for i := 0; i < *count; i++ {
 		print_date(today.Year()+i, birth_date)
 	}
 }
