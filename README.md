@@ -4,10 +4,12 @@ Sample app written in Ruby and Go that displays:
 * Year, Age, Day of the week.
 
 # Usage
+```
   -count int
     	Number of dates to print (default 10)
   -date string
     	Birthday date
+```
 
 ### Example Go output:
 ```
